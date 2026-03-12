@@ -4,8 +4,8 @@
 -- ==========================================================
 
 -- 1. Buat Database
-CREATE DATABASE IF NOT EXISTS db_aspirasi;
-USE db_aspirasi;
+-- CREATE DATABASE IF NOT EXISTS db_aspirasi;
+-- USE db_aspirasi;
 
 -- 2. Tabel Aspirasi (Penyimpanan laporan masyarakat)
 DROP TABLE IF EXISTS aspirations;

@@ -98,11 +98,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Jalankan sinkronisasi saat halaman dimuat
     // --- DATA INITIALIZATION ---
+    const API_BASE_URL = 'http://localhost:3000'; // Mengarah ke backend lokal (node server.js)
+
     function updateLandingStats() {
         const elTotalAspirasi = document.getElementById('totalAspirasi');
         if(!elTotalAspirasi) return;
 
-        fetch('/api/aspirations')
+        fetch(`${API_BASE_URL}/api/aspirations`)
             .then(res => res.json())
             .then(data => {
                 elTotalAspirasi.innerText = data.length.toLocaleString('id-ID');
@@ -271,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
 
                 // REAL API CALL: Kirim ke Database Backend
-                fetch('/api/aspirations', {
+                fetch(`${API_BASE_URL}/api/aspirations`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(aspirasiData)
